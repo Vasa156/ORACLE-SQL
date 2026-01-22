@@ -1,0 +1,23 @@
+--DDL create,alter
+--creating table
+
+CREATE TABLE student_list(
+       id NUMBER PRIMARY KEY,
+       name VARCHAR2(50) NOT NULL,
+       passing_out_year NUMBER(4),
+       score NUMBER(2,2)
+);
+
+INSERT ALL
+      INTO student_list VALUES (1001,'Vinayagar',2025,0.93)
+      INTO student_list VALUES(1002,'Lakshmi',2023,0.09)
+    SELECT*FROM dual;
+    COMMIT;
+      
+
+
+ALTER TABLE student_list ADD email VARCHAR2(50);
+ALTER TABLE student_list MODIFY name VARCHAR(50);
+ALTER TABLE student_list DROP COLUMN score;
+
+SELECT*FROM student_list;
