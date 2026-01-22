@@ -1,0 +1,33 @@
+-- your code goes here
+--create table DDL
+CREATE TABLE employee(
+       emp_id NUMBER PRIMARY KEY,
+       emp_name VARCHAR2(50) NOT NULL,
+       salary NUMBER(8,2),
+       dept VARCHAR2(20),
+       join_year NUMBER(4)
+);
+
+ALTER TABLE employee ADD email VARCHAR2(40);
+ALTER TABLE employee MODIFY emp_name VARCHAR2(100);
+ALTER TABLE employee MODIFY dept VARCHAR2(20) NOT NULL;
+
+
+--insert DML
+  INSERT ALL
+    INTO employee VALUES(101, 'Ravi', 30000.67, 'IT', 2022, NULL)
+    INTO employee VALUES(102, 'Anu', 45000.98, 'HR', 2021, NULL)
+    INTO employee VALUES(103, 'Kumar', 50000.09, 'IT', 2020, NULL)
+  SELECT*FROM dual;
+          
+SELECT*FROM employee;    
+
+UPDATE employee
+SET salary=salary+5000 
+WHERE dept='IT';
+
+DELETE FROM employee
+WHERE join_year<2021;
+
+
+ROLLBACK;
